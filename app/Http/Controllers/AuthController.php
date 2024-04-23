@@ -31,6 +31,14 @@ class AuthController extends Controller
         return view('Auth/register');
     }
 
+    public function logout()  // Page Register
+    {
+        auth()->logout();
+        Session()->flush();
+
+        return view('Auth/logout');
+    }
+
 
     public function authenticate(Request $request) //Auth Login
     {
@@ -42,7 +50,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended('/market');
         }
 
         return back()->withErrors([

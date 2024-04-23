@@ -76,6 +76,16 @@
                                 <div class="col mx-auto">
                                     <div class="auth-form-box">
                                         <div class="text-center mt-5">
+                                             {{-- Logo --}}
+                                             <a
+                                             class="d-flex flex-center text-decoration-none mb-4"
+                                             href="#">
+                                             <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block ms-2">
+                                                 <img src="{{asset ('assets/img/reezky/ReezkyIconROrange.png') }}" alt="reezky"
+                                                     width="75" />
+                                             </div>
+                                         </a>
+
                                             <h3 class="text-body-highlight">Registration Member</h3>
                                             <p class="text-body-tertiary">Create your account today</p>
                                         </div>
@@ -435,7 +445,7 @@
 </main>
 
     <!-- ===============================================-->
-    <!--               Copy Right Reezky                -->
+    <!--               Customize WebApps                -->
     <!-- ===============================================-->
 
 

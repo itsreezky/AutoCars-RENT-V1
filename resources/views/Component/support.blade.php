@@ -2,7 +2,7 @@
     <div class="container-fluid support-chat">
         <div class="card bg-body-emphasis">
             <div class="card-header d-flex flex-between-center px-4 py-3 border-bottom border-translucent">
-                <h5 class="mb-0 d-flex align-items-center gap-2">Demo widget<span
+                <h5 class="mb-0 d-flex align-items-center gap-2">Customer Service<span
                         class="fa-solid fa-circle text-success fs-11"></span></h5>
                 <div class="btn-reveal-trigger"><button
                         class="btn btn-link p-0 dropdown-toggle dropdown-caret-none transition-none d-flex"
@@ -26,7 +26,7 @@
                         </a><a
                             class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
                             href="#!">
-                            <p class="mb-0 fw-semibold fs-9">I can’t reorder a product I previously ordered</p>
+                            <p class="mb-0 fw-semibold fs-9">I can’t reorder a car I previously ordered</p>
                             <span class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
                         </a><a
                             class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
@@ -42,8 +42,8 @@
                     <div class="text-center mt-auto">
                         <div class="avatar avatar-3xl status-online"><img
                                 class="rounded-circle border border-3 border-light-subtle"
-                                src="../../../assets/img/team/30.webp" alt="" /></div>
-                        <h5 class="mt-2 mb-3">Eric</h5>
+                                src="{{asset ('assets/img/reezky/ReezkyIconROrange.png') }}" alt="" /></div>
+                        <h5 class="mt-2 mb-3">AutoCars - RENT</h5>
                         <p class="text-center text-body-emphasis mb-0">Ask us anything – we’ll get back to you
                             here or by email within 24 hours.</p>
                     </div>
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div><button class="btn p-0 border border-translucent btn-support-chat"><span
-            class="fs-8 btn-text text-primary text-nowrap">Chat demo</span><span
-            class="fa-solid fa-circle text-success fs-9 ms-2"></span><span
+        class="fa-solid fa-circle text-success fs-9 me-1 mb-1"></span><span
+            class="fs-9 btn-text text-primary text-nowrap">Customer Service</span><span
             class="fa-solid fa-chevron-down text-primary fs-7"></span></button>
 </div>

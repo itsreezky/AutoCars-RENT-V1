@@ -27,10 +27,7 @@ class Cars extends Authenticatable
         'tarif',
         'keterangan',
         'spesifikasi',
-        'foto_mobil1',
-        'foto_mobil2',
-        'foto_mobil3',
-        'foto_mobil4',
+        'foto_mobil',
         'status',
     ];
 
@@ -38,7 +35,7 @@ class Cars extends Authenticatable
 {
     parent::boot();
     self::creating(function ($model) {
-        $model->kode_mobil = IdGenerator::generate(['table' => 'mobil', 'field' => 'kode_mobil', 'length' => 10, 'prefix' => 'ACR-']);
+        $model->kode_mobil = IdGenerator::generate(['table' => 'cars', 'field' => 'kode_mobil', 'length' => 10, 'prefix' => 'ACR-']);
     });
 }
 

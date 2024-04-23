@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MarketController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GarageController;
+use App\Http\Controllers\TesterController;
 
 // CREATED WITH ❤︎ Reezky
 // http://itsreezky.my.id
@@ -24,7 +27,10 @@ use Illuminate\Support\Facades\Redirect;
                                     // P U B L I C \\
 
 // Tester Page
+Route::get('/tester', [TesterController::class, 'index'])->name('index');
 
+
+//Welcome Page
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,10 +44,45 @@ Route::get('/register', [AuthController::class, 'register'])->name('auth.registe
 Route::post('/register', [AuthController::class, 'store'])->name('auth.store');
 
 // Logout
-Route::get('logout', function ()
-{
-    auth()->logout();
-    Session()->flush();
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    return Redirect::to('/');
-})->name('logout');
+
+//=============================================================================================\\
+
+                                    // M A R K E T \\
+
+
+// Market
+Route::get('/market', [MarketController::class, 'index'])->name('index');
+
+
+//=============================================================================================\\
+
+                                    // P R O F I L E \\
+
+// Profile Studio
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
+
+// Update Profile
+Route::patch('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+// Update Foto Profile
+Route::put('/profile/{id}', [ProfileController::class, 'foto'])->name('profile.foto')->middleware('auth');
+
+//=============================================================================================\\
+
+                                    // G A R A G E \\
+
+// Garage Studio
+Route::get('/garage', [GarageController::class, 'index'])->name('garage.index')->middleware('auth');
+
+// Add Car Garage
+Route::post('/garage', [GarageController::class, 'store'])->name('garage.store')->middleware('auth');
+
+// Update Car Garage
+Route::patch('/garage/{id}', [GarageController::class, 'update'])->name('garage.update')->middleware('auth');
+
+// Delete Car Garage
+Route::delete('/garage/{id}', [GarageController::class, 'destroy'])->name('garage.destroy')->middleware('auth');
+
+//=============================================================================================\\

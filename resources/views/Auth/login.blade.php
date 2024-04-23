@@ -81,9 +81,9 @@
                                             <a
                                                 class="d-flex flex-center text-decoration-none mb-4"
                                                 href="#">
-                                                <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block">
-                                                    <img src="{{asset ('assets/img/icons/logo.png') }}" alt="reezky"
-                                                        width="58" />
+                                                <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block ms-2">
+                                                    <img src="{{asset ('assets/img/reezky/ReezkyIconROrange.png') }}" alt="reezky"
+                                                        width="75" />
                                                 </div>
                                             </a>
 
@@ -131,7 +131,7 @@
 
                                         </form>
 
-                                        <div class="text-center"><a class="fs-9 fw-bold"
+                                        <div class="text-center mb-6"><a class="fs-9 fw-bold"
                                                 href="{{ url('/register') }}">Create an account</a></div>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@
     </main>
 
     <!-- ===============================================-->
-    <!--               Copy Right Reezky                -->
+    <!--               Customize WebApps                -->
     <!-- ===============================================-->
 
 
