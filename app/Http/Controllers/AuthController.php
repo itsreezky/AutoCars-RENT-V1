@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Str;
+
 use App\Models\Users;
 
 use Illuminate\Support\Facades\Auth;
+
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 
@@ -31,11 +35,18 @@ class AuthController extends Controller
         return view('Auth/register');
     }
 
+    public function verified()  // Page Register
+    {
+        return view('Auth/verified');
+    }
+
     public function logout()  // Page Register
     {
+
         auth()->logout();
         Session()->flush();
 
+        toast('Successfully Logout, Thanks for visiting.','success','top-end')->autoClose(7000);
         return view('Auth/logout');
     }
 
@@ -50,37 +61,30 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/market');
+            toast('Successfully Login, Happy RENT !','success','top-end')->autoClose(7000);
+            return redirect()->intended('profile');
         }
 
-        return back()->withErrors([
-            'email' => 'The account credentials do not match our records.',
-        ]);
+        toast('ERROR ! Please check your credential','error','top-end')->autoClose(5000);
+        return back();
     }
-
 
     public function store(Request $request){ //Register Function
 
-            $request->validate([
-            'nik' => 'required',
-            'nama' => 'required',
-            'kelamin' => 'required',
-            'email' => 'required|unique:users,email',
-            'password' => 'required',
-            'confirm-password' => 'required|same:password',
-            'hp' => 'required',
-            'alamat' => 'required',
-            'kota' => 'required',
-            'bank' => 'required',
-            'no_rekening' => 'required',
-        ]);
+        $request->validate([
+        'nama' => 'required',
+        'email' => 'required|unique:users,email',
+        'password' => 'required',
+        'confirm-password' => 'required|same:password',
+    ]);
 
-        $data = $request->except('confirm-password', 'password',);
-        $data['password'] = Hash::make($request->password);
+    $data = $request->except('confirm-password', 'password',);
+    $data['password'] = Hash::make($request->password);
 
-        Users::create($data);
+    Users::create($data);
 
-        return redirect('login');
-    }
+    toast('Account Created Successfully, You Can Login Now','success','top-end')->autoClose(7000);
+    return redirect('login');
+}
 
 }

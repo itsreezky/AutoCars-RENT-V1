@@ -82,6 +82,16 @@
                                 <input id="tarif" type="number" class="form-control" value="{{ old('tarif', $car->tarif) }}"
                                     name="tarif">
                             </div>
+                            <div class="input-group input-group-static mb-4">
+                                <label>Keterangan</label>
+                                <input id="keterangan" type="text" class="form-control" value="{{ old('keterangan', $car->keterangan) }}"
+                                    name="keterangan">
+                            </div>
+                            <div class="input-group input-group-static mb-4">
+                                <label>Spesifikasi</label>
+                                <input id="spesifikasi" type="text" class="form-control" value="{{ old('spesifikasi', $car->spesifikasi) }}"
+                                    name="spesifikasi">
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn bg-gradient-dark mt-4 mb-0">Edit</button>
                             </div>

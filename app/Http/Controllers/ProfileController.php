@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Str;
+
+use RealRashid\SweetAlert\Facades\Alert;
+
 use App\Models\Users;
+
 use App\Models\Cars;
 
 class ProfileController extends Controller
@@ -49,7 +52,8 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return back()->with('status', 'Profile updated!');
+        toast('Your Profile as been updated!','success','top-end')->autoClose(7000);
+        return back();
     }
 
     public function foto(Request $request, $id)
@@ -64,32 +68,16 @@ class ProfileController extends Controller
         $kode = Str::random(10);
 
         $imageName = $name.$kode.'.'.$request->foto_profile->extension();
-        $uploadedImage = $request->foto_profile->move(public_path('storage/images/profile/'), $imageName);
-        $imagePath = 'storage/images/profile/' . $imageName;
+        $uploadedImage = $request->foto_profile->move(public_path('storage/images/profile/'.$name.'/fotoprofile'.'/'), $imageName);
+        $imagePath = 'storage/images/profile/'.$name.'/fotoprofile'.'/'. $imageName;
 
         $user->foto_profile = $imagePath;
 
 
         $user->save();
 
-        return back()->with('foto', 'Foto Profile updated!');
-    }
-
-    public function show(string $id)
-    {
-        //get cars by ID
-        $car = Cars::findOrFail($id);
-
-        // innerjoin to array
-        $usersxcars = DB::table('users')
-        ->join('cars','users.uuid','=','cars.uuid')
-        ->get();
-
-        $array = json_decode($usersxcars);
-        $data = $array[$id];
-
-        //render view with cars
-        return view('/profile', compact('car', 'data'));
+        toast('Foto Profile Updated !','success','top-end')->autoClose(7000);
+        return back();
     }
 
     }

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GarageController;
+use App\Http\Controllers\VerifiedController;
 use App\Http\Controllers\TesterController;
 
 // CREATED WITH ❤︎ Reezky
@@ -53,15 +54,17 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 // Market
-Route::get('/market', [MarketController::class, 'index'])->name('index');
+Route::get('/market', [MarketController::class, 'index'])->name('market');
 
+//Market Detail Cars
+Route::get('/market/{kode_mobil}',[MarketController::class, 'details'])->name('market.details');
 
 //=============================================================================================\\
 
                                     // P R O F I L E \\
 
 // Profile Studio
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 
 // Update Profile
 Route::patch('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
@@ -69,12 +72,23 @@ Route::patch('/profile/{id}', [ProfileController::class, 'update'])->name('profi
 // Update Foto Profile
 Route::put('/profile/{id}', [ProfileController::class, 'foto'])->name('profile.foto')->middleware('auth');
 
+
+//=============================================================================================\\
+
+                                 // V E R I F I E D \\
+
+// Verified Page
+Route::get('/verified/{uuid}', [VerifiedController::class, 'index'])->name('verified')->middleware('auth');
+
+// Verified Action
+Route::put('/verified/{id}', [VerifiedController::class, 'verify'])->name('verified.verify')->middleware('auth');
+
 //=============================================================================================\\
 
                                     // G A R A G E \\
 
 // Garage Studio
-Route::get('/garage', [GarageController::class, 'index'])->name('garage.index')->middleware('auth');
+Route::get('/garage', [GarageController::class, 'index'])->name('garage')->middleware('auth');
 
 // Add Car Garage
 Route::post('/garage', [GarageController::class, 'store'])->name('garage.store')->middleware('auth');

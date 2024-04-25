@@ -19,13 +19,12 @@ return new class extends Migration
         $table->string('merk');
         $table->string('model');
         $table->string('plat');
-        $table->bigInteger('tarif');
+        $table->string('transmisi');
+        $table->string('seat');
+        $table->string('bahan_bakar');
         $table->string('keterangan');
-        $table->string('spesifikasi');
-        $table->string('foto_mobil1')->nullable();
-        $table->string('foto_mobil2')->nullable();
-        $table->string('foto_mobil3')->nullable();
-        $table->string('foto_mobil4')->nullable();
+        $table->bigInteger('tarif');
+        $table->string('foto_mobil')->nullable();
         $table->string('status')->default('Available');
         $table->timestamps();
     });

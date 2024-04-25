@@ -27,6 +27,14 @@
 <body>
 
     <!-- ===============================================-->
+    <!--                 SweetAlert                    -->
+    <!-- ===============================================-->
+
+            @include('sweetalert::alert')
+
+
+
+    <!-- ===============================================-->
     <!--                   Main Content                 -->
     <!-- ===============================================-->
 
@@ -88,6 +96,8 @@
 
                                             <h3 class="text-body-highlight">Registration Member</h3>
                                             <p class="text-body-tertiary">Create your account today</p>
+
+
                                         </div>
                                         <div class="position-relative">
                                             <hr class="bg-body-secondary mt-5 mb-4" />
@@ -120,50 +130,6 @@
                                                                     </span>
                                                                 </span>
                                                                 <span class="d-none d-md-block mt-1 fs-9">Account</span>
-                                                            </div>
-                                                        </a></li>
-                                                    <li class="nav-item" role="presentation"><a
-                                                            class="nav-link fw-semibold"
-                                                            href="#bootstrap-wizard-validation-tab2"
-                                                            data-bs-toggle="tab" data-wizard-step="2"
-                                                            aria-selected="false" tabindex="-1" role="tab">
-                                                            <div class="text-center d-inline-block"><span
-                                                                    class="nav-item-circle-parent"><span
-                                                                        class="nav-item-circle">
-                                                                        <svg class="svg-inline--fa fa-lock"
-                                                                            aria-hidden="true" focusable="false"
-                                                                            data-prefix="fas" data-icon="lock"
-                                                                            role="img"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            viewBox="0 0 448 512" data-fa-i2svg="">
-                                                                            <path fill="currentColor"
-                                                                                d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z">
-                                                                            </path>
-                                                                        </svg>
-                                                                        <!-- <span class="fas fa-user"></span> Font Awesome fontawesome.com --></span></span><span
-                                                                    class="d-none d-md-block mt-1 fs-9">Personal</span>
-                                                            </div>
-                                                        </a></li>
-                                                    <li class="nav-item" role="presentation"><a
-                                                            class="nav-link fw-semibold"
-                                                            href="#bootstrap-wizard-validation-tab3"
-                                                            data-bs-toggle="tab" data-wizard-step="3"
-                                                            aria-selected="false" tabindex="-1" role="tab">
-                                                            <div class="text-center d-inline-block"><span
-                                                                    class="nav-item-circle-parent"><span
-                                                                        class="nav-item-circle"><svg
-                                                                            class="svg-inline--fa fa-file-lines"
-                                                                            aria-hidden="true" focusable="false"
-                                                                            data-prefix="fas" data-icon="file-lines"
-                                                                            role="img"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            viewBox="0 0 384 512" data-fa-i2svg="">
-                                                                            <path fill="currentColor"
-                                                                                d="M256 0v128h128L256 0zM224 128L224 0H48C21.49 0 0 21.49 0 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48V160h-127.1C238.3 160 224 145.7 224 128zM272 416h-160C103.2 416 96 408.8 96 400C96 391.2 103.2 384 112 384h160c8.836 0 16 7.162 16 16C288 408.8 280.8 416 272 416zM272 352h-160C103.2 352 96 344.8 96 336C96 327.2 103.2 320 112 320h160c8.836 0 16 7.162 16 16C288 344.8 280.8 352 272 352zM288 272C288 280.8 280.8 288 272 288h-160C103.2 288 96 280.8 96 272C96 263.2 103.2 256 112 256h160C280.8 256 288 263.2 288 272z">
-                                                                            </path>
-                                                                        </svg>
-                                                                        <!-- <span class="fas fa-file-alt"></span> Font Awesome fontawesome.com --></span></span><span
-                                                                    class="d-none d-md-block mt-1 fs-9">Bank</span>
                                                             </div>
                                                         </a></li>
                                                     <li class="nav-item" role="presentation"><a
@@ -255,99 +221,6 @@
                                                                     for="bootstrap-wizard-validation-wizard-checkbox">I
                                                                     accept the <a href="#!">terms </a>and <a
                                                                         href="#!">privacy policy</a></label></div>
-
-                                                        </div>
-                                                        <div class="tab-pane" role="tabpanel"
-                                                            aria-labelledby="bootstrap-wizard-validation-tab2"
-                                                            id="bootstrap-wizard-validation-tab2">
-
-                                                            <div class="mb-2"><label class="form-label"
-                                                                    for="bootstrap-wizard-validation-wizard-phone">Nomor
-                                                                    Induk KTP / NIK</label><input class="form-control"
-                                                                    type="text" name="nik"
-                                                                    placeholder="e.g 32784652178578"
-                                                                    value="{{ old('nik') }}" id="nik"
-                                                                    required="required">
-                                                                <div class="invalid-feedback">This field is required.
-                                                                </div>
-                                                                <div class="mb-2"><label class="form-label"
-                                                                        for="bootstrap-wizard-validation-gender">Gender</label><select
-                                                                        class="form-select" name="kelamin" id="kelamin"
-                                                                        required="required">
-                                                                        <option value="">Select your gender ...</option>
-                                                                        <option value="Male">Male</option>
-                                                                        <option value="Female">Female</option>
-                                                                        <option value="Other">Other</option>
-                                                                    </select>
-                                                                    <div class="invalid-feedback">This field is
-                                                                        required.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mb-2"><label class="form-label"
-                                                                        for="bootstrap-wizard-validation-wizard-phone">Phone</label><input
-                                                                        class="form-control" type="number" name="hp"
-                                                                        placeholder="e.g 0821234567"
-                                                                        value="{{ old('hp') }}" id="hp"
-                                                                        required="required">
-                                                                    <div class="invalid-feedback">This field is
-                                                                        required.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mb-2"><label class="form-label"
-                                                                        for="bootstrap-wizard-validation-gender">City</label><select
-                                                                        class="form-select" name="kota" id="kota"
-                                                                        required="required">
-                                                                        <option value="">Select your City ...</option>
-                                                                        <option value="Bandung">Bandung</option>
-                                                                        <option value="Jakarta">Jakarta</option>
-                                                                    </select>
-                                                                    <div class="invalid-feedback">This field is
-                                                                        required.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mb-2"><label class="form-label"
-                                                                        for="bootstrap-wizard-validation-wizard-address">Address</label><textarea
-                                                                        class="form-control" rows="4"
-                                                                        value="{{ old('alamat') }}" id="alamat"
-                                                                        name="alamat" required="required"></textarea>
-                                                                    <div class="invalid-feedback">This field is
-                                                                        required.
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="tab-pane" role="tabpanel"
-                                                            aria-labelledby="bootstrap-wizard-validation-tab3"
-                                                            id="bootstrap-wizard-validation-tab3">
-
-
-                                                            <div class="row gx-3 gy-2">
-                                                                <div class="col-6"><label class="form-label"
-                                                                        for="bootstrap-wizard-validation-card-holder-country">BANK</label><select
-                                                                        class="form-select" name="bank" id="bank"
-                                                                        required="required">
-                                                                        <option value="">Select your Bank ...
-                                                                        </option>
-                                                                        <option value="BCA">BCA</option>
-                                                                        <option value="BRI">BRI</option>
-                                                                        <option value="BNI">BNI</option>
-                                                                        <option value="MANDIRI">MANDIRI</option>
-                                                                        <option value="BTN">BTN</option>
-                                                                    </select>
-                                                                    <div class="invalid-feedback">This field is
-                                                                        required.</div>
-                                                                </div>
-                                                                <div class="col-6"><label class="form-label"
-                                                                        for="bootstrap-wizard-validation-card-name">No.Rekening</label><input
-                                                                        class="form-control"
-                                                                        placeholder="e.g 0547798564" name="no_rekening"
-                                                                        type="number" value="{{ old('no_rekening') }}"
-                                                                        id="no_rekening" required="required">
-                                                                    <div class="invalid-feedback">This field is
-                                                                        required.</div>
-                                                                </div>
-                                                            </div>
 
                                                         </div>
                                                         <div class="tab-pane" role="tabpanel"

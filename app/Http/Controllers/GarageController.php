@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use App\Models\Cars;
-use App\Models\Users;
+
 use Illuminate\Support\Str;
+
+use RealRashid\SweetAlert\Facades\Alert;
+
+use App\Models\Cars;
+
+
+
 
 
 class GarageController extends Controller
@@ -42,9 +48,11 @@ class GarageController extends Controller
             'merk' => 'required',
             'model' => 'required',
             'plat' => 'required',
-            'tarif' => 'required',
+            'transmisi' => 'required',
+            'seat' => 'required',
+            'bahan_bakar' => 'required',
             'keterangan' => 'required',
-            'spesifikasi' => 'required',
+            'tarif' => 'required',
             'foto_mobil' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'status' => 'required',
 
@@ -54,8 +62,8 @@ class GarageController extends Controller
         $kode = Str::random(10);
 
         $imageName = $name.$kode.'.'.$request->foto_mobil->extension();
-        $uploadedImage = $request->foto_mobil->move(public_path('storage/images/cars/'.$name.'/'), $imageName);
-        $imagePath = ('storage/images/cars/'.$name.'/'). $imageName;
+        $uploadedImage = $request->foto_mobil->move(public_path('storage/images/profile/'.$name.'/cars'.'/'), $imageName);
+        $imagePath = ('storage/images/profile/'.$name.'/cars'.'/'). $imageName;
 
 
             $mobil = Cars::create($data);
@@ -64,7 +72,8 @@ class GarageController extends Controller
 
             $mobil->save();
 
-            return redirect()->back()->with('notifadd',"CAR SUCCESSFULLY ADDED TO MARKET.");
+            toast('Congratulation ! Car Added Successfully','success','top-end')->autoClose(7000);
+            return back();
 
     }
 
@@ -78,24 +87,21 @@ class GarageController extends Controller
             request()->validate([
                 'merk' => 'required',
                 'model' => 'required',
-                'plat' => 'required',
                 'tarif' => 'required',
                 'keterangan' => 'required',
-                'spesifikasi' => 'required',
             ]);
 
             $upmobil = Cars::find($id);
 
             $upmobil->merk = $request->merk;
             $upmobil->model = $request->model;
-            $upmobil->plat = $request->plat;
             $upmobil->tarif = $request->tarif;
             $upmobil->keterangan = $request->keterangan;
-            $upmobil->spesifikasi = $request->spesifikasi;
 
             $upmobil->save();
 
-            return redirect()->back()->with('notifup',"CAR SUCCESSFULLY UPDATED.");
+            toast('Congratulation ! Car Updated Successfully','success','top-end')->autoClose(7000);
+            return back();
 
         }
 
@@ -106,7 +112,9 @@ class GarageController extends Controller
     public function destroy(string $id)
     {
         Cars::destroy($id);
-        return redirect()->back()->with('notifdel',"CAR SUCCESSFULLY DELETED.");
+
+        toast('Congratulation ! Car Deleted Successfully','success','top-end')->autoClose(7000);
+        return back();
 
     }
 }

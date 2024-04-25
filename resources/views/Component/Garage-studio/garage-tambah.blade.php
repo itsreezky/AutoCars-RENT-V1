@@ -32,17 +32,52 @@
                                 <input id="plat" type="text" class="form-control" name="plat">
                             </div>
                             <div class="input-group input-group-static mb-4">
-                                <label for="tarif">Tarif / Hari</label>
-                                <input id="tarif" type="number" class="form-control" name="tarif">
+                                <label for="tarif">Transmisi</label>
+                                <select
+                                                                    class="form-select" name="transmisi" id="transmisi"
+                                                                    required="required">
+                                                                    <option value="">Transmisi</option>
+                                                                    <option value="Manual">Manual</option>
+                                                                    <option value="Otomatis">Otomatis</option>
+                                                                </select>
+                            </div>
+                            <div class="input-group input-group-static mb-4">
+                                <label for="tarif">Seat</label>
+                                <select
+                                                                    class="form-select" name="seat" id="seat"
+                                                                    required="required">
+                                                                    <option value="">Jumlah Seat</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+
+                                                                </select>
+                            </div>
+                            <div class="input-group input-group-static mb-4">
+                                <label for="tarif">Bahan Bakar</label>
+                                <select
+                                                                    class="form-select" name="bahan_bakar" id="bahan_bakar"
+                                                                    required="required">
+                                                                    <option value="">Bahan Bakar</option>
+                                                                    <option value="Pertalite">Pertalite</option>
+                                                                    <option value="Pertamax">Pertamax</option>
+                                                                    <option value="Pertamax TURBO">Pertamax TURBO</option>
+                                                                    <option value="Solar">Solar</option>
+
+                                                                </select>
                             </div>
                             <div class="input-group input-group-static mb-4">
                                 <label for="keterangan">Keterangan Mobil</label>
                                 <textarea id="keterangan" rows="4" cols="50" type="text" class="form-control" name="keterangan"></textarea>
                             </div>
                             <div class="input-group input-group-static mb-4">
-                                <label for="spesifikasi">Spesifikasi / Modifikasi</label>
-                                <textarea id="spesifikasi" rows="4" cols="50" class="form-control" name="spesifikasi"></textarea>
+                                <label for="tarif">Tarif / Hari</label>
+                                <input id="tarif" type="number" class="form-control" name="tarif">
                             </div>
+
                             <div class="input-group input-group-static mb-4">
                                 <label for="foto_mobil">Foto Mobil</label>
                                 <input id="foto_mobil" type="file" class="form-control" name="foto_mobil">

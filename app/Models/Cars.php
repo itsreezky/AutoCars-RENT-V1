@@ -24,12 +24,15 @@ class Cars extends Authenticatable
         'merk',
         'model',
         'plat',
-        'tarif',
+        'transmisi',
+        'seat',
+        'bahan_bakar',
         'keterangan',
-        'spesifikasi',
+        'tarif',
         'foto_mobil',
         'status',
     ];
+
 
     public static function boot()
 {

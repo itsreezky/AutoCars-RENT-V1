@@ -13,20 +13,19 @@ return new class extends Migration
     {
 
         Schema::create('users', function (Blueprint $table) {
-            $table->id() ->primary();;
-            $table->string('uuid') ->index();
-            $table->bigInteger('nik');
+            $table->id()->primary();;
+            $table->string('uuid')->index();
+            $table->bigInteger('nik')->nullable();
             $table->string('nama');
-            $table->string('kelamin');
+            $table->string('kelamin')->nullable();
             $table->string('email');
             $table->string('password');
-            $table->string('hp');
-            $table->string('alamat');
-            $table->string('kota');
-            $table->string('bank');
-            $table->bigInteger('no_rekening');
-            $table->string('foto_profile') ->nullable();
-            $table->string('status') ->default('Member');
+            $table->string('hp')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('kota')->nullable();
+            $table->string('foto_ktp')->nullable();
+            $table->string('foto_profile')->nullable();
+            $table->string('status')->default('Regular Member');
             $table->timestamps();
         });
     }

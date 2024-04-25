@@ -26,6 +26,13 @@
 
 <body>
 
+
+    <!-- ===============================================-->
+    <!--                 SweetAlert                    -->
+    <!-- ===============================================-->
+
+            @include('sweetalert::alert')
+
     <!-- ===============================================-->
     <!--                   Main Content                 -->
     <!-- ===============================================-->
@@ -68,7 +75,7 @@
                                         <button class="btn btn-phoenix-secondary" data-bs-target="#editprofile"
                                             title="View and Edit Profile" data-bs-toggle="modal">
                                             <span class="fas fa-edit me-2"></span>Edit Profile</button>
-                                        <a href="/logout"><button class="btn btn-phoenix-danger">
+                                        <a href="/logout" data-confirm-delete="true"><button class="btn btn-phoenix-danger">
                                                 <span class="fa-solid fa-right-from-bracket me-2"></span>Sign
                                                 out</button></a>
                                     </div>
@@ -109,32 +116,80 @@
 
                                                 <div class="col-12 col-sm-auto flex-1 mb-5">
                                                     <h3>{{ (Auth::user()->nama) }}
-                                                        <span class="badge badge-phoenix fs-10 badge-phoenix-info">
-                                                            <span class="badge-label">{{ (Auth::user()->status)
-                                                                }}</span>
-                                                            <span class="ms-1" data-feather="check"
-                                                                style="height:12.8px;width:12.8px;"></span>
-                                                        </span>
+
                                                     </h3>
+
+                                                    @if(Auth::user()->status == 'Verified Member')
+
+                                                    <span class="badge badge-phoenix fs-10 badge-phoenix-success">
+                                                        <span class="badge-label">{{ (Auth::user()->status)
+                                                            }}</span>
+                                                        <span class="ms-1" data-feather="check"
+                                                            style="height:12.8px;width:12.8px;"></span>
+                                                    </span>
+
+                                                    @else
+
+                                                    <span class="badge badge-phoenix fs-10 badge-phoenix-secondary">
+                                                        <span class="badge-label">{{ (Auth::user()->status)
+                                                            }}</span>
+                                                        <span class="ms-1" data-feather="check"
+                                                            style="height:12.8px;width:12.8px;"></span>
+                                                    </span>
+
+                                                    @endif
+
+                                                    <br>
                                                     <small>ID : {{ (Auth::user()->uuid) }}</small>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-between-center pt-4">
+
+                                            @if(Auth::user()->status == 'Verified Member')
+
                                             <div>
                                                 <h6 class="mb-2 text-body-secondary">Total Car</h6>
-                                                <h4 class="fs-7 text-body-highlight mb-0">$894</h4>
+
+                                                  <h4 class="fs-8 text-body-highlight mb-0">-</h4>
                                             </div>
+
                                             <div class="text-end">
                                                 <h6 class="mb-2 text-body-secondary">Location</h6>
-                                                <h4 class="fs-7 text-body-highlight mb-0">Kota {{ (Auth::user()->kota)
+                                                <h4 class="fs-8 text-body-highlight mb-0">Kota {{ (Auth::user()->kota)
                                                     }}</h4>
                                             </div>
                                             <div class="text-end">
                                                 <h6 class="mb-2 text-body-secondary">Registered since</h6>
-                                                <h4 class="fs-7 text-body-highlight mb-0"> {{ (Auth::user()->created_at)
+                                                <h4 class="fs-8 text-body-highlight mb-0"> {{ (Auth::user()->created_at)
                                                     }}</h4>
                                             </div>
+
+                                            @else
+
+                                            <div>
+                                                <h6 class="mb-2 text-body-secondary">Verified Status</h6>
+
+                                                  <h4 class="fs-8 text-body-highlight mb-0">Not Verified</h4>
+                                            </div>
+
+                                            <div class="text-end ms-4">
+                                                <h6 class="mb-2 text-body-secondary"></h6>
+                                                <h4 class="fs-8 text-body-highlight mb-0">
+                                                    <a href="{{ url('verified/'.Auth::user()->uuid) }}"><button class="btn btn-phoenix-success">
+                                                        Verify Account Now <span class="fa-solid fa-check ms-2"></span></button></a>
+                                                </h4>
+                                            </div>
+
+                                            <div class="text-end">
+                                                <h6 class="mb-2 text-body-secondary">Registered since</h6>
+                                                <h4 class="fs-8 text-body-highlight mb-0"> {{ (Auth::user()->created_at)
+                                                    }}</h4>
+                                            </div>
+
+                                            @endif
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -180,6 +235,8 @@
                                 </div>
                             </div>
                         </div>
+                        @if(Auth::user()->status == 'Verified Member')
+
                         <div>
                             <div class="scrollbar">
                                 <ul class="nav nav-underline fs-9 flex-nowrap mb-3 pb-1" id="myTab" role="tablist">
@@ -237,7 +294,7 @@
                                                     <tr
                                                         class="hover-actions-trigger btn-reveal-trigger position-static">
                                                         <td class="order align-middle white-space-nowrap py-2 ps-0"><a
-                                                                class="fw-semibold text-primary" href="#!">{{ $car->kode_mobil }}</a>
+                                                                class="fw-semibold text-primary" href="/garage">{{ $car->kode_mobil }}</a>
                                                         </td>
                                                         <td class="status align-middle white-space-nowrap text-start fw-bold text-body-tertiary py-2">
 
@@ -1799,6 +1856,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        @endif
+
                     </div><!-- end of .container-->
                 </section>
 

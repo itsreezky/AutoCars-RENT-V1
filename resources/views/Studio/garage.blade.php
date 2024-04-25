@@ -27,6 +27,13 @@
 <body class="smart-home bg-light-200">
 
 
+<!-- ===============================================-->
+    <!--                 SweetAlert                    -->
+    <!-- ===============================================-->
+
+    @include('sweetalert::alert')
+
+
     <!-- ===============================================-->
     <!--                 Garage Navbar                  -->
     <!-- ===============================================-->
@@ -55,13 +62,6 @@
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container">
 
-                <!-- ===============================================-->
-                <!--                 Garage Toast                   -->
-                <!-- ===============================================-->
-
-                @include('Component.Garage-studio.garage-toast')
-
-
 
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mx-auto my-auto">
@@ -87,12 +87,12 @@
                 <div class="row">
                     @foreach($cardata as $car)
 
-                    <div class="col-lg-3 col-sm-6">
+                    <div class="col-lg-3 col-sm-6 me-5">
                         <div class="card card-plain">
                             <div class="card-header p-0 position-relative">
                                 <a class="d-block blur-shadow-image">
                                     <img src="{{ ($car->foto_mobil) }}" alt="img-blur-shadow"
-                                        class="img-fluid shadow border-radius-lg" loading="lazy">
+                                        class="img shadow border-radius-lg" width="350" height="250" loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body px-0">
@@ -116,7 +116,7 @@
                                         $car->model }}</a>
                                 </h5>
 
-                                <a href="javascript:;" class="text-info text-sm icon-move-right">Check Information
+                                <a href="{{ url('market/'.$car->kode_mobil) }}" class="text-info text-sm icon-move-right">Check Information
                                     <i class="fas fa-arrow-right text-xs ms-1"></i>
                                 </a>
                             </div>

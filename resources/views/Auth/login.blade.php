@@ -26,6 +26,13 @@
 
 <body>
 
+
+    <!-- ===============================================-->
+    <!--                 SweetAlert                    -->
+    <!-- ===============================================-->
+
+    @include('sweetalert::alert')
+
     <!-- ===============================================-->
     <!--                   Main Content                 -->
     <!-- ===============================================-->
@@ -90,6 +97,8 @@
 
                                             <h3 class="text-body-highlight">Sign In</h3>
                                             <p class="text-body-tertiary">Get access to your account</p>
+
+
                                         </div>
                                         <div class="position-relative">
                                             <hr class="bg-body-secondary mt-5 mb-4" />
@@ -102,20 +111,30 @@
 
                                             @csrf
 
-                                            <div class="mb-3 text-start"><label class="form-label" for="email">Email
+                                            <div class="mb-3 text-start"><label class="form-label @error('email') is-invalid @enderror" for="email">Email
                                                     address</label>
                                                 <div class="form-icon-container">
                                                     <input class="form-control form-icon-input" id="email" type="email"
                                                         name="email" placeholder="name@example.com" />
                                                     <span class="fas fa-user text-body fs-9 form-icon"></span>
                                                 </div>
+                                                @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                             </div>
-                                            <div class="mb-3 text-start"><label class="form-label"
+                                            <div class="mb-3 text-start"><label class="form-label @error('password') is-invalid @enderror"
                                                     for="password">Password</label>
                                                 <div class="form-icon-container"><input
                                                         class="form-control form-icon-input" id="password"
                                                         type="password" name="password" placeholder="password" /><span
                                                         class="fas fa-key text-body fs-9 form-icon"></span></div>
+                                                        @error('password')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
                                             </div>
                                             <div class="row flex-between-center mb-7">
                                                 <div class="col-auto">

@@ -29,10 +29,10 @@ class Users extends Authenticatable
         'hp',
         'alamat',
         'kota',
-        'bank',
-        'no_rekening',
+        'foto_ktp',
         'foto_profile',
         'status',
     ];
+
 
 }

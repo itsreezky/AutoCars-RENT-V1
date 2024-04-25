@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Users;
 use App\Models\Cars;
 
@@ -14,28 +15,25 @@ class MarketController extends Controller
     {
 
         $user = Auth::user();
-        $users = Users::get();
-        $cars = Cars::get();
         $cardata = Cars::inRandomOrder()->get();
 
-        return view('Market/market', compact('users','cars','user','cardata'));
+        // innerjoin to array
+        $usersxcars = DB::table('users')
+        ->join('cars','users.uuid','=','cars.uuid')
+        ->get();
+
+        $userxcar = json_decode($usersxcars);
+
+        return view('Market/market', compact('user','cardata','userxcar'));
     }
 
-    // public function show(string $id)
-    // {
-    //     //get cars by ID
-    //     $car = Cars::findOrFail($id);
+    public function details($kode_mobil)
+    {
+        $cardata = Cars::inRandomOrder()->get();
+        $cars = Cars::where('kode_mobil', $kode_mobil)->first();
 
-    //     // innerjoin to array
-    //     $userxcars = DB::table('users')
-    //     ->join('cars','users.uuid','=','cars.uuid')
-    //     ->get();
+        return view('Market/market-detail', compact('cars', 'cardata'));
+    }
 
-    //     $array = json_decode($userxcars);
-    //     $data = $array[$id];
-
-    //     //render view with cars
-    //     return view('detail-cars', compact('car', 'data'));
-    // }
 
 }

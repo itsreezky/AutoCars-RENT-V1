@@ -152,8 +152,17 @@
                                             <li class="nav-item"><a class="nav-link px-3" href="{{ url('/market') }}">
                                                 <span class="fa-solid fa-store me-2 text-body"></span>&nbsp;Market</a></li>
 
+                                                @if(Auth::user()->status == 'Verified Member')
+
                                                 <li class="nav-item"><a class="nav-link px-3" href="{{ url('/garage') }}">
-                                                    <span class="fa-solid fa-car me-2 text-body"></span>&nbsp;Garage</a></li>
+                                                <span class="fa-solid fa-car me-2 text-body"></span>&nbsp;Garage</a></li>
+
+                                                @else
+                                                <li class="nav-item"><a class="nav-link px-3 garagereg1" href="#">
+                                                <span class="fa-solid fa-car me-2 text-body"></span>&nbsp;Garage</a></li>
+
+                                                @endif
+
 
                                             <li class="nav-item"><a class="nav-link px-3" href="#!"> <span
                                                         class="me-2 text-body"
@@ -167,7 +176,7 @@
                                     <div class="card-footer p-0 border-top border-translucent">
                                         <hr />
                                         <div class="px-3"> <a
-                                                class="btn btn-phoenix-secondary d-flex flex-center w-100"
+                                                class="btn btn-phoenix-secondary d-flex flex-center w-100" data-confirm-delete="true"
                                                 href="{{ route('logout') }}"> <span class="me-2" data-feather="log-out">
                                                 </span>Sign out</a></div>
                                         <div class="my-2 text-center fw-bold fs-10 text-body-quaternary"><a
@@ -196,6 +205,10 @@
                                                 class="btn btn-phoenix-secondary d-flex flex-center w-100"
                                                 href="/login"> <span class="me-2" data-feather="log-in">
                                                 </span>Sign in</a></div>
+                                                <div class="px-3"> <a
+                                                    class="btn btn-phoenix-secondary d-flex flex-center w-100"
+                                                    href="/register"> <span class="me-2" data-feather="log-in">
+                                                    </span>Register</a></div>
                                         <div class="my-2 text-center fw-bold fs-10 text-body-quaternary"><a
                                                 class="text-body-quaternary me-1" href="#!">Privacy
                                                 policy</a>&bull;<a class="text-body-quaternary mx-1"
