@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Str;
 
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Users;
 
@@ -26,10 +26,7 @@ class ProfileController extends Controller
     {
         $user = Users::findOrFail(Auth::id());
 
-        $useruuid = Auth::user()->uuid;
-        $cardata = Cars::where('uuid', $useruuid)->get();
-
-        return view('Studio/profile', compact('user','cardata'));
+        return view('Studio/profile', compact('user'));
     }
 
     public function update(Request $request, $id)

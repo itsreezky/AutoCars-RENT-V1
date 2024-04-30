@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Str;
 
-use RealRashid\SweetAlert\Facades\Alert;
-
 use App\Models\Users;
 
 class VerifiedController extends Controller
@@ -19,7 +17,7 @@ class VerifiedController extends Controller
     {
         $user = Users::findOrFail(Auth::id());
 
-        return view('Auth/verified', compact('user'));
+        return view('Auth/users/verified', compact('user'));
     }
 
     public function verify(Request $request, $id){ //Register Function
@@ -64,7 +62,7 @@ class VerifiedController extends Controller
         $user->save();
 
         toast('Your Account Successfully Registered To Verified Member, Happy RENT !','success','top-end')->autoClose(7000);
-        return redirect('/profile');
+        return redirect('profile');
     }
 
 

@@ -14,9 +14,9 @@ use App\Traits\Uuid;
 
 class Users extends Authenticatable
 {
-    use HasFactory, Notifiable,Uuid;
+    use HasFactory,Notifiable,Uuid;
 
-    protected $table = 'users';
+    protected $guard = 'users';
     protected $primaryKey = 'id';
 
     protected $fillable = [

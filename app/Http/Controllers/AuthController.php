@@ -6,13 +6,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
 
-use Illuminate\Support\Str;
-
-use App\Models\Users;
-
 use Illuminate\Support\Facades\Auth;
 
-use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Users;
 
 class AuthController extends Controller
 
@@ -27,17 +23,17 @@ class AuthController extends Controller
 {
     public function login() // Page Login
     {
-        return view('Auth/login');
+        return view('Auth/users/login');
     }
 
     public function register()  // Page Register
     {
-        return view('Auth/register');
+        return view('Auth/users/register');
     }
 
     public function verified()  // Page Register
     {
-        return view('Auth/verified');
+        return view('Auth/users/verified');
     }
 
     public function logout()  // Page Register
@@ -47,7 +43,7 @@ class AuthController extends Controller
         Session()->flush();
 
         toast('Successfully Logout, Thanks for visiting.','success','top-end')->autoClose(7000);
-        return view('Auth/logout');
+        return view('Auth/users/logout');
     }
 
 
@@ -58,7 +54,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
 
             toast('Successfully Login, Happy RENT !','success','top-end')->autoClose(7000);

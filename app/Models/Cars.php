@@ -19,7 +19,7 @@ class Cars extends Authenticatable
     protected $table = 'cars';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'uuid',
+        'owner_id',
         'kode_mobil',
         'merk',
         'model',
@@ -32,7 +32,6 @@ class Cars extends Authenticatable
         'foto_mobil',
         'status',
     ];
-
 
     public static function boot()
 {

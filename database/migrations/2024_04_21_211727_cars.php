@@ -14,7 +14,7 @@ return new class extends Migration
     {
     Schema::create('cars', function (Blueprint $table) {
         $table->id()->primary();;
-        $table->string('uuid')->index();;
+        $table->string('owner_id')->index();;
         $table->string('kode_mobil');
         $table->string('merk');
         $table->string('model');
