@@ -12,7 +12,9 @@
               <table class="table table-sm fs-9 mb-0">
                 <thead>
                   <tr class="bg-body-highlight">
-                    <th class="sort border-top border-translucent ps-3" data-sort="carsid">Kode Mobil</th>
+                    <th class="sort border-top border-translucent ps-3" data-sort="foto">Foto Mobil</th>
+                    <th class="sort border-top border-translucent" data-sort="carsid">Kode Mobil</th>
+                    <th class="sort border-top border-translucent" data-sort="owner">Pemilik</th>
                     <th class="sort border-top border-translucent" data-sort="merk">Merk</th>
                     <th class="sort border-top border-translucent" data-sort="model">Model</th>
                     <th class="sort border-top border-translucent" data-sort="tarif">Tarif</th>
@@ -22,7 +24,9 @@
                 <tbody class="list">
                 @foreach ($wishlist as $wish )
                   <tr>
-                    <td class="align-middle ps-3 carsid"> #{{ $wish->kode_mobil }}</td>
+                    <td class="align-middle ps-3 foto"><img src="{{ $wish->foto_mobil }}" width="100" height="100"></td>
+                    <td class="align-middle carsid">#{{ $wish->kode_mobil }}</td>
+                    <td class="align-middle owner">{{ $wish->owner }}</td>
                     <td class="align-middle merk">{{ $wish->merk }}</td>
                     <td class="align-middle model">{{ $wish->model }}</td>
                     <td class="align-middle tarif">@currency($wish->tarif)</td>

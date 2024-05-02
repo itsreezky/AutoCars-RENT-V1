@@ -91,7 +91,7 @@
                                 <div class="text-start">
                                     <h6 class="mb-2 text-body-secondary">Total Rent</h6>
 
-                                      <h4 class="fs-8 text-body-highlight mb-0">{{ $count }}</h4>
+                                      <h4 class="fs-8 text-body-highlight mb-0">0</h4>
                                 </div>
 
                                 <div class="text-center ms-5">
@@ -216,8 +216,8 @@
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="list" id="profile-order-table-body">
-                                        @foreach ($cardata as $car )
+                                    {{-- <tbody class="list" id="profile-order-table-body">
+
 
                                         <tr
                                             class="hover-actions-trigger btn-reveal-trigger position-static">
@@ -262,7 +262,7 @@
                                         </tr>
 
                                         @endforeach
-                                    </tbody>
+                                    </tbody> --}}
                                 </table>
                             </div>
                             <div class="row align-items-center justify-content-between py-2 pe-0 fs-9">

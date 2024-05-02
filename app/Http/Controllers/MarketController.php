@@ -58,6 +58,8 @@ class MarketController extends Controller
         $data = $request->validate([
             'uuid' => 'required',
             'kode_mobil' => 'required',
+            'foto_mobil' => 'required',
+            'owner' => 'required',
             'merk' => 'required',
             'model' => 'required',
             'tarif' => 'required',

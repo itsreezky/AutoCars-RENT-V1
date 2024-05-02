@@ -8,6 +8,7 @@
                   <li class="breadcrumb-item">Cars Detail</li>
                 </ol>
             </nav>
+
             <div class="row g-5 mb-5 mb-lg-8" data-product-details="data-product-details">
                 <div class="col-12 col-lg-6">
                     <div class="row g-3 mb-3">
@@ -26,10 +27,27 @@
                     <div class="d-flex">
                         @if(Auth::user())
 
+                        <form action="{{route('addWishlist')}}" method="POST">
 
-                        <button class="btn btn-lg btn-outline-warning rounded-pill w-100 me-3 px-2 px-sm-4 fs-9 fs-sm-8">
-                        <a href="{{ route('wishlist.store') }}">
+                            @csrf
+
+                                {{-- INPUT DATA TO WISHLIST --}}
+                                <input type="hidden" name="uuid" id="uuid" value="{{ Auth::user()->uuid }}">
+                                <input type="hidden" name="foto_mobil" id="foto_mobil"
+                                    value="{{ $cars->foto_mobil }}">
+                                <input type="hidden" name="kode_mobil" id="kode_mobil"
+                                    value="{{ $cars->kode_mobil }}">
+                                <input type="hidden" name="owner" id="owner" value="{{ $own->nama }}">
+                                <input type="hidden" name="merk" id="merk" value="{{ $cars->merk }}">
+                                <input type="hidden" name="model" id="model" value="{{ $cars->model }}">
+                                <input type="hidden" name="tarif" id="tarif" value="{{ $cars->tarif }}">
+
+                                {{-- ///////////////////////// --}}
+
+
+                            <button type="submit" name="submit" class="btn btn-lg btn-outline-warning rounded-pill w-100 me-3 px-2 px-sm-4 fs-9 fs-sm-8">
                         <span class="me-2 far fa-heart"></span>Add to wishlist </a></button>
+                    </form>
 
 
                         <button class="btn btn-lg btn-warning rounded-pill w-100 fs-9 fs-sm-8">

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
 
-        Schema::create('administrator', function (Blueprint $table) {
+        Schema::create('administrators', function (Blueprint $table) {
             $table->id()->primary();;
             $table->string('uuid')->index();
             $table->string('nama');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carsown');
+        Schema::dropIfExists('administrators');
     }
 };

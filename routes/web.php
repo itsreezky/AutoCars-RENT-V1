@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\OwnersController;
 use App\Http\Controllers\VerifiedController;
+use App\Http\Controllers\AdministratorController;
 
 // CREATED WITH ❤︎ Reezky
 // http://itsreezky.my.id
@@ -119,3 +120,31 @@ Route::get('/verified/{uuid}', [VerifiedController::class, 'index'])->name('veri
 Route::put('/verified/{id}', [VerifiedController::class, 'verify'])->name('verified.verify')->middleware('auth');
 
 //=============================================================================================\\
+
+                                // A D M I N  R O U T E \\
+
+                                // PAGE LOGIN CHECK ADMINISTRATOR
+Route::get('/administrator/in', [AdministratorController::class, 'administratorin'])->name('administrator.in');
+Route::post('/administrator/in', [AdministratorController::class, 'administratorcheck'])->name('administrator.check');
+
+                                // PAGE LOGOUT ADMINISTRATOR
+Route::get('/administrator/out', [AdministratorController::class, 'administratorout'])->name('administrator.out');
+
+
+                                // MIDDLEWARE ADMIN PAGE
+Route::middleware('auth:administrator')->group(function(){
+
+// PAGE HOME ADMINISTRATOR
+Route::get('/administrator', [AdministratorController::class, 'administratorhome'])->name('administrator.home');
+
+// PAGE USERS ADMINISTRATOR
+Route::get('/administrator/users', [AdministratorController::class, 'administratorusers'])->name('administrator.users');
+
+// PAGE OWNERS ADMINISTRATOR
+Route::get('/administrator/owners', [AdministratorController::class, 'administratorowners'])->name('administrator.owners');
+
+// PAGE CARS ADMINISTRATOR
+Route::get('/administrator/cars', [AdministratorController::class, 'administratorcars'])->name('administrator.cars');
+
+});
+

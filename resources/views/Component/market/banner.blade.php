@@ -21,7 +21,7 @@
                             <div class="banner-text" data-bs-theme="light">
                                 <h2 class="text-warning-light fw-bolder fs-lg-3 fs-xxl-2">Whooping <span class="gradient-text">30% </span>Off</h2>
                                 <h3 class="fw-bolder fs-lg-5 fs-xxl-3 text-white">on saturday cars</h3>
-                            </div><a class="btn btn-lg btn-primary rounded-pill banner-button" href="/login">Book
+                            </div><a class="btn btn-lg btn-primary rounded-pill banner-button" href="{{ route('market') }}">Book
                                 Now</a>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                             <center>
                                 <div class="banner-text text-md-center me-3 mt-3 mb-2">
                                     <h2 class="text-white fw-bolder fs-xl-4">Get <span class="gradient-text">10% Off
-                                        </span><br class="d-md-none"> on first rent</h2><a class="btn btn-lg btn-primary rounded-pill banner-button" href="/login" s>Book
+                                        </span><br class="d-md-none"> on first rent</h2><a class="btn btn-lg btn-primary rounded-pill banner-button" href="{{ route('market') }}" s>Book
                                         Now</a>
                                 </div>
                             </center>
@@ -51,7 +51,7 @@
                                         <div class="banner-text ms-6">
                                             <h2 class="text-white fw-bolder fs-sm-4 mb-5"> Become Owner Verified Partner<br>
                                                 <span class="fs-7 fs-sm-6"> Join and Register FREE</span></h2>
-                                                <a class="btn btn-lg btn-warning rounded-pill banner-button" href="{{route('profile') }}">Check Now</a>
+                                                <a class="btn btn-lg btn-warning rounded-pill banner-button" href="{{route('ownregister') }}">Check Now</a>
                                         </div>
                                     </center>
                                 </div>

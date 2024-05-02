@@ -43,7 +43,13 @@ return [
         'owner' => [
             'driver' => 'session',
             'provider' => 'owners',
+
         ],
+        'administrator' => [
+            'driver' => 'session',
+            'provider' => 'administrators',
+        ],
+
     ],
 
     /*
@@ -73,6 +79,12 @@ return [
         'owners' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\Owners::class),
+
+        ],
+
+        'administrators' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Administrators::class),
 
         ],
         // 'users' => [
