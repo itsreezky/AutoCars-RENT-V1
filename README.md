@@ -5,15 +5,15 @@
 
 Greetings! I'm Reezky (Muhammad Rizki), a proficient web and application developer with a diverse skill set. My expertise spans a range of programming languages and technologies, allowing me to craft dynamic and engaging digital solutions.
 
-<p align="center"><a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/ReezkyIconROrange.png" width="50" alt="Autocars Logo"></a><b>AUTOCARS - RENT</b></p>
+<p align="center"><a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/ReezkyIconROrange.png" width="50" alt="Autocars Logo"></a><b>AUTOCARS - RENT</b></p>
 <p align="center"><b>Responsive Web & Mobile Cars Rentalling</b></p>
 <p align="center"><a href="https://demo.itsreezky.my.id/Autocars-RENT/">( DEMO VIEW )</a></p>
 
 ## Public & Member Screenshoot Page
-<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/Market01.png" width="250" alt="Market Page"></a>
-<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/Market01_dark.png" width="250" alt="Market Page"></a>
-<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/Cars-detail.png" width="450" alt="Market Page"></a>
-<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/grid.png" width="450" alt="Market Page"></a>
+<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/Market01.png" width="250" alt="Market Page"></a>
+<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/Market01_dark.png" width="250" alt="Market Page"></a>
+<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/Cars-detail.png" width="450" alt="Market Page"></a>
+<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/grid.png" width="450" alt="Market Page"></a>
 
 Fiture : 
 <b> Public </b>
@@ -31,8 +31,8 @@ Fiture :
 - For Cart and Make Order and another fiture, U Can Create Manually or Contact Me.
 
 ## Owner Cars & Garage Studio
-<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/Profile_Owner.png" width="400" alt="Market Page"></a>
-<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/autocars/Garage_Owner.png" width="250" alt="Market Page"></a>
+<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/Profile_Owner.png" width="400" alt="Market Page"></a>
+<a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/Garage_Owner.png" width="250" alt="Market Page"></a>
 
 Fiture : 
 <b> Owners </b> 
