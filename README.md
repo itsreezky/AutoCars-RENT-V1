@@ -6,7 +6,7 @@
 Greetings! I'm Reezky (Muhammad Rizki), a proficient web and application developer with a diverse skill set. My expertise spans a range of programming languages and technologies, allowing me to craft dynamic and engaging digital solutions.
 
 ## UPDATE VERSION
-Latest Version HEre : <a href="https://github.com/itsreezky/LARAVEL-TransIndoCars"> CLICK ME </a>
+Latest Version Here : <a href="https://github.com/itsreezky/LARAVEL-TransIndoCars"> CLICK ME </a>
 <p align="center"><a href="http://itsreezky.my.id" target="_blank"><img src="http://resource.itsreezky.my.id/demo-web/autocars/ReezkyIconROrange.png" width="50" alt="Autocars Logo"></a><b>AUTOCARS - RENT</b></p>
 <p align="center"><b>Responsive Web & Mobile Cars Rentalling</b></p>
 <p align="center"><a href="https://demo.itsreezky.my.id/Autocars-RENT/">( DEMO VIEW )</a></p>
